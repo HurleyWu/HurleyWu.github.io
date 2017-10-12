@@ -1,0 +1,9 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public enum Colour {
+    GREEN,
+    BLUE
+}
