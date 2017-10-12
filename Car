@@ -1,0 +1,66 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class Car extends Transportation {
+
+    private String licensePlate;
+
+    private Colour colour;
+
+    private VehicleType vehicleType;
+
+    public String getLicensePlate() {
+        return licensePlate;
+    }
+
+    public void setLicensePlate(String licensePlate) {
+        this.licensePlate = licensePlate;
+    }
+
+    public Colour getColour() {
+        return colour;
+    }
+
+    public void setColour(Colour colour) {
+        this.colour = colour;
+    }
+
+    public VehicleType getVehicleType() {
+        return vehicleType;
+    }
+
+    public void setVehicleType(VehicleType vehicleType) {
+        this.vehicleType = vehicleType;
+    }
+
+    @Override
+    public TransportationType getType() {
+        return TransportationType.CAR;
+    }
+
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void printInfomationOfSelf() {
+        StringBuffer sb = new StringBuffer();
+        sb.append("Transportation Type : " + getType().toString()).append(" , ");
+        sb.append("name : " + getName()).append(" , ");
+        sb.append("License Plate : " + getLicensePlate()).append(" , ");
+        sb.append("Engine Power : " + getEnginePower().getNumber()).append(" ").append(getEnginePower().getUnit().toString()).append(" , ");
+        sb.append("Maximal Speed : " + getMaxMoveSpeed().getNumber()).append(" ").append(getMaxMoveSpeed().getUnit().toString()).append(" , ");
+        sb.append("Colour : " + getColour().toString()).append(" , ");
+        sb.append("Vehicle Type : " + getVehicleType().toString());
+        System.out.println(sb.toString());
+
+    }
+
+    @Override
+    public int compareTo(Transportation o) {
+        return 0;
+    }
+}
