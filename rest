@@ -1,0 +1,363 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class MaxMoveSpeed {
+    private Integer number;
+    private MoveSpeedUnit unit;
+
+    public MaxMoveSpeed(Integer number, MoveSpeedUnit unit) {
+        this.number = number;
+        this.unit = unit;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public MoveSpeedUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(MoveSpeedUnit unit) {
+        this.unit = unit;
+    }
+}
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public interface Moveable {
+
+    public void move();
+}
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public interface Moveable {
+
+    public void move();
+}
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class NetWeight {
+
+    private Integer number;
+
+    private NetWeightUnit unit;
+
+    public NetWeight(Integer number, NetWeightUnit unit) {
+        this.number = number;
+        this.unit = unit;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public NetWeightUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(NetWeightUnit unit) {
+        this.unit = unit;
+    }
+}
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public enum NetWeightUnit {
+    T
+}
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class Plane extends Transportation {
+
+    private String registration;
+
+    private Wingspan wingspan;
+
+    private LoadCapacity loadCapacity;
+
+    private NetWeight netWeight;
+
+    private PlaneType planeType;
+
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+
+    public Wingspan getWingspan() {
+        return wingspan;
+    }
+
+    public void setWingspan(Wingspan wingspan) {
+        this.wingspan = wingspan;
+    }
+
+    public LoadCapacity getLoadCapacity() {
+        return loadCapacity;
+    }
+
+    public void setLoadCapacity(LoadCapacity loadCapacity) {
+        this.loadCapacity = loadCapacity;
+    }
+
+    public NetWeight getNetWeight() {
+        return netWeight;
+    }
+
+    public void setNetWeight(NetWeight netWeight) {
+        this.netWeight = netWeight;
+    }
+
+    public PlaneType getPlaneType() {
+        return planeType;
+    }
+
+    public void setPlaneType(PlaneType planeType) {
+        this.planeType = planeType;
+    }
+
+    @Override
+    public TransportationType getType() {
+        return TransportationType.PLANE;
+    }
+
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void printInfomationOfSelf() {
+
+    }
+
+    @Override
+    public int compareTo(Transportation o) {
+        return 0;
+    }
+
+
+}
+
+
+
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public enum PlaneType {
+    FLYING_CLASS_OF_JET_PLANE
+}
+
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public interface Printable {
+
+    public void printInfomationOfSelf();
+}
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public abstract class Transportation implements Moveable,Printable,Comparable<Transportation>{
+
+    private String name;
+
+    private TransportationType type;
+
+    private EnginePower enginePower;
+
+    private MaxMoveSpeed maxMoveSpeed;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public TransportationType getType() {
+        return type;
+    }
+
+    public void setType(TransportationType type) {
+        this.type = type;
+    }
+
+    public EnginePower getEnginePower() {
+        return enginePower;
+    }
+
+    public void setEnginePower(EnginePower enginePower) {
+        this.enginePower = enginePower;
+    }
+
+    public MaxMoveSpeed getMaxMoveSpeed() {
+        return maxMoveSpeed;
+    }
+
+    public void setMaxMoveSpeed(MaxMoveSpeed maxMoveSpeed) {
+        this.maxMoveSpeed = maxMoveSpeed;
+    }
+
+    @Override
+    public String toString() {
+        return "Transportation{" +
+                "name='" + name + '\'' +
+                ", type=" + type +
+                ", enginePower=" + enginePower +
+                ", maxMoveSpeed=" + maxMoveSpeed +
+                '}';
+    }
+}
+
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public enum TransportationType {
+
+    CAR,
+    PLANE,
+    BOAT
+
+}
+
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public enum VehicleType {
+    PERSONAL_VEHICLE
+}
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class Wingspan {
+
+    private Integer number;
+
+    private WinspanUnit unit;
+
+    public Wingspan(Integer number, WinspanUnit unit) {
+        this.number = number;
+        this.unit = unit;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public WinspanUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(WinspanUnit unit) {
+        this.unit = unit;
+    }
+}
+
+
+
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public enum WinspanUnit {
+    M
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
