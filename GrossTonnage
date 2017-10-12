@@ -1,0 +1,38 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class GrossTonnage {
+    private Integer number;
+    private GrossTonnageUnit unit;
+
+    public GrossTonnage(Integer number, GrossTonnageUnit unit) {
+        this.number = number;
+        this.unit = unit;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public GrossTonnageUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(GrossTonnageUnit unit) {
+        this.unit = unit;
+    }
+
+    @Override
+    public String toString() {
+        return "GrossTonnage{" +
+                "number=" + number +
+                ", unit=" + unit +
+                '}';
+    }
+}
