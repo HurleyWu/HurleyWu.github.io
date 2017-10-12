@@ -1,0 +1,120 @@
+package com.hikvision.cms.common.transportation;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class ConsoleApp {
+
+    public static void main(String[] args) {
+        //information in the memory
+        //all transportations
+        List<Transportation> transportations = new ArrayList<>();
+        //car 1
+        Car car1 = new Car();
+        car1.setName("car 1");
+        car1.setLicensePlate("NF123456");
+        car1.setEnginePower(new EnginePower(147, EngineSpeedUnit.KW));
+        car1.setMaxMoveSpeed(new MaxMoveSpeed(200, MoveSpeedUnit.KM_PER_HOUR));
+        car1.setColour(Colour.GREEN);
+        car1.setVehicleType(VehicleType.PERSONAL_VEHICLE);
+        transportations.add(car1);
+
+        //car 2
+        Car car2 = new Car();
+        car2.setName("car 2");
+        car2.setLicensePlate("NF654321");
+        car2.setEnginePower(new EnginePower(150, EngineSpeedUnit.KW));
+        car2.setMaxMoveSpeed(new MaxMoveSpeed(195, MoveSpeedUnit.KM_PER_HOUR));
+        car2.setColour(Colour.BLUE);
+        car2.setVehicleType(VehicleType.PERSONAL_VEHICLE);
+        transportations.add(car2);
+
+        //plane
+        Plane plane1 = new Plane();
+        plane1.setName("plane");
+        plane1.setRegistration("LN1234");
+        plane1.setEnginePower(new EnginePower(1000, EngineSpeedUnit.KW));
+        plane1.setWingspan(new Wingspan(30, WinspanUnit.M));
+        plane1.setLoadCapacity(new LoadCapacity(21, LoadCapacityUnit.T));
+        plane1.setNetWeight(new NetWeight(10, NetWeightUnit.T));
+        plane1.setPlaneType(PlaneType.FLYING_CLASS_OF_JET_PLANE);
+        transportations.add(plane1);
+
+        //boat
+        Boat boat1 = new Boat();
+        boat1.setName("boat");
+        boat1.setRegistration("ABC123");
+        boat1.setEnginePower(new EnginePower(100, EngineSpeedUnit.KW));
+        boat1.setMaxMoveSpeed(new MaxMoveSpeed(30, MoveSpeedUnit.KNOT_PER_HOUR));
+        boat1.setGrossTonnage(new GrossTonnage(500, GrossTonnageUnit.KG));
+        transportations.add(boat1);
+
+        System.out.println("Please input the number of what do you what to do");
+        System.out.println("1 -> Print Information");
+        System.out.println("2 -> Compare with two cars");
+        System.out.println("3 -> Ask to move");
+        System.out.println("4 -> Quit");
+
+        while (true) {
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            String read = null;
+            try {
+                read = br.readLine();
+                if (null == read || read.trim().equals("")) {
+                    System.out.println("Please input the right command");
+                    continue;
+                }
+                boolean isquit = false;
+                switch (read.trim()) {
+                    case "1":
+                        printing(transportations);
+                        break;
+                    case "2":
+                        compareWithTwoCars(transportations);
+                        break;
+                    case "3":
+                        askToMove(transportations);
+                        break;
+                    case "4":
+                        isquit = true;
+                        break;
+                }
+
+                if (isquit) {
+                    break;
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+
+    }
+
+    private static void askToMove(List<Transportation> transportations) {
+
+
+
+    }
+
+    private static void compareWithTwoCars(List<Transportation> transportations) {
+
+
+    }
+
+    private static void printing(List<Transportation> transportations) {
+        System.out.println("There are three transportations");
+        for (Transportation transportation : transportations) {
+            transportation.printInfomationOfSelf();
+        }
+    }
+
+}
