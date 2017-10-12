@@ -1,0 +1,32 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class EnginePower {
+
+    private Integer number;
+
+    private EngineSpeedUnit unit;
+
+    public EnginePower(Integer number, EngineSpeedUnit unit) {
+        this.number = number;
+        this.unit = unit;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public EngineSpeedUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(EngineSpeedUnit unit) {
+        this.unit = unit;
+    }
+}
