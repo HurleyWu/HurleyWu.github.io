@@ -1,0 +1,56 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class Boat extends Transportation {
+
+    private String registration;
+
+    private GrossTonnage grossTonnage;
+
+    public String getRegistration() {
+        return registration;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+
+    public GrossTonnage getGrossTonnage() {
+        return grossTonnage;
+    }
+
+    public void setGrossTonnage(GrossTonnage grossTonnage) {
+        this.grossTonnage = grossTonnage;
+    }
+
+    @Override
+    public TransportationType getType() {
+        return TransportationType.BOAT;
+    }
+
+    @Override
+    public void move() {
+
+    }
+
+    @Override
+    public void printInfomationOfSelf() {
+        System.out.println("");
+    }
+
+    @Override
+    public int compareTo(Transportation o) {
+        return 0;
+    }
+
+
+    @Override
+    public String toString() {
+        return "Boat{" +
+                "registration='" + registration + '\'' +
+                ", grossTonnage=" + grossTonnage +
+                '}';
+    }
+}
