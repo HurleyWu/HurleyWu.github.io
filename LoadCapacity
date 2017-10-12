@@ -1,0 +1,30 @@
+package com.hikvision.cms.common.transportation;
+
+/**
+ * Created by wuhongliang on 2017/10/12.
+ */
+public class LoadCapacity {
+    private Integer number;
+    private LoadCapacityUnit unit;
+
+    public LoadCapacity(Integer number, LoadCapacityUnit unit) {
+        this.number = number;
+        this.unit = unit;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public LoadCapacityUnit getUnit() {
+        return unit;
+    }
+
+    public void setUnit(LoadCapacityUnit unit) {
+        this.unit = unit;
+    }
+}
